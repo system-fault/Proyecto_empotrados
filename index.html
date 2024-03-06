@@ -2,39 +2,66 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Autor" content="David Martinez" />
     <title>Control WEB</title>
-    <link rel="stylesheet" href="./CSS/estilos.css">
+    <link rel="stylesheet" href="./CSS/estilos.css" />
     <script src="./JavaScript/funciones.js"></script>
 </head>
 
 <body onload="generarTemperatura();">
-    <div class="divmain">
-        <div class="divmaintemp">
-            <img src="./imagenes/display.jpg" />
-            <h2 id="temperatura">
-                <script>setInterval(generarTemperatura, 5000)</script>
-            </h2>
-        </div>
-        <div class="repvideo">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ouNrlys4mhc?si=4UXOEywHt7BVddYJ"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-            <div id="botonesReproductor">
-                <button><img src="./imagenes/botonVideo.png" width="50" height="50"></button>
+    <div class="titulo">
+        <h1>CONTROL WEB</h1>
+    </div>
+
+    <section class="grid-layout">
+
+        <div class="cajaTemperatura">
+            <h2>MEDICION TEMPERATURA</h2>
+            <!--? DISPLAY TEMPERATURA -->
+            <div>
+                <img id="display" src="./imagenes/display.jpg">
+                <h3 id="temperatura">
+                    <script>
+                        setInterval(generarTemperatura, 5000);
+                    </script>
+                </h3>
             </div>
         </div>
-        <div class="divBotones">
-            <button id="boton" onclick="cambiarImagen()"><img id="miboton" src="./imagenes/boton1.jpg" /></button>
+
+
+        <div class="cajaStream">
+            <h2>STREAM VIDEO</h2>
+            <div>
+                <iframe width="60%" height="50%" src="https://www.youtube.com/embed/ouNrlys4mhc?si=4UXOEywHt7BVddYJ"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div>
+                <button>
+                    <img src="./imagenes/botonVideo.png" alt="Boton icono de youtube" width="50" height="50" />
+                </button>
+                <button id="botonimagen">
+                    <img src="./imagenes/boton_imagen.png" alt="Boton icono de imagen" width="50" height="50" />
+                </button>
+            </div>
         </div>
-    </div>
-    
 
 
 
+
+
+
+
+        <div class="caja">
+            <h2>BOTONES CONTROL</h2>
+            <button id="boton" onclick="cambiarImagen()">
+                <img id="miboton" src="./imagenes/boton1.jpg" />
+            </button>
+        </div>
+    </section>
 </body>
 
 </html>

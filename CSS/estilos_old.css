@@ -1,0 +1,54 @@
+/*? Archivo de estilos css */
+
+body {
+    background-color: #70b86c; /* Color de fondo claro */
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
+    padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+}
+
+.divmain {
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    right: 50px;
+    left: 50px;
+}
+
+.divtemp {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.repvideo {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+}
+
+.divBotones {
+    position: absolute;
+    bottom: 50px;
+    left: 70px;
+}
+
+/* estilos para id */
+
+#temperatura {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    font-size: xx-large;
+    color: rgb(15, 15, 15);
+    position: absolute;
+    top: 25px;
+    left: 120px;
+}
+
+#botonesReproductor {
+    display: grid;
+    place-items: center;
+    grid-column: 1;
+    grid-row: 1;
+    
+}

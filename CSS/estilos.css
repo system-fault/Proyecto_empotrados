@@ -1,55 +1,84 @@
-/*? Archivo de estilos css */
+/* Hoja de estilos para index.html */
+
+/*? etiquetas HTML */
+
+/* #956bd8, #19dd81); */
 
 body {
-    background-color: #70b86c; /* Color de fondo claro */
-    margin: 0; /* Elimina el margen predeterminado del cuerpo */
-    padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        265deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 121, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
+/*! clases (.) (class) */
 
-.divmain {
-    position: absolute;
-    top: 50px;
-    bottom: 50px;
-    right: 50px;
-    left: 50px;
+.grid-layout {
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template-rows: 300px auto;
+    width: 80%;
+    height: 90%;
+    margin: 0 auto;
+    border: 1px solid black;
+    background-color: lightgreen;
+    padding: 20px;
 }
 
-.divmaintemp {
-    position: absolute;
-    top: 50px;
-    left: 50px;
+.cajaTemperatura {
+    position: relative; /*hace que podamos colocar el texto de forma relativa a este contenedor */
+    background: rgb(244, 106, 7);
+    background: linear-gradient(
+        265deg,
+        rgba(244, 106, 7, 1) 30%,
+        rgba(38, 200, 213, 1) 49%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    border: 3px solid black;
 }
 
-.repvideo{
-    position: absolute;
-    top: 50px;
-    right: 50px;
+.cajaTemperatura h2 {
+    color: black;
+    text-decoration: underline;
 }
 
-.divBotones{
-    position: absolute;
-    bottom: 50px;
-    left: 70px;
+.cajaTemperatura img {
+    width: 80%;
+    height: auto;
 }
 
-/* estilos para id */
-
-#temperatura{
-
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size:xx-large;
-    color: rgb(15, 15, 15);
-    position: absolute;
-    top: 25px;
-    left: 120px;
+.cajaStream {
+    background: rgb(40, 195, 189);
+    background: linear-gradient(
+        235deg,
+        rgba(40, 195, 189, 1) 46%,
+        rgba(182, 253, 45, 1) 100%
+    );
+    border: 3px solid black;
 }
 
-#botonReproductor{
-    position: absolute;
-    bottom: -50px;
-    right: 150;
+.caja {
+    background-color: aquamarine;
+    border: 3px solid black;
+    text-align: center;
+    line-height: 100px;
 }
 
+/** id (#) */
 
-
+#temperatura {
+    position: absolute; /* Establece la posición absoluta para el h3 */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Centra exactamente el contenido */
+    margin: 0; /* Elimina el margen predeterminado */
+    font-size: 3vw; /* Tamaño de fuente relativo al ancho de la ventana */
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: xx-large;
+    color: chartreuse;
+}
