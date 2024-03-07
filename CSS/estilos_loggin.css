@@ -1,0 +1,205 @@
+
+
+
+:root {
+    --color-1: #D9B4C1; /* Definición del color primario */
+    --color-2: #223440; /* Definición del color secundario */
+    --color-3: #152026; /* Definición del color secundario */
+    --color-4: #BF6363; /* Definición del color secundario */
+    --color-5: #8C4D4D; /* Definición del color secundario */
+  }
+  
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+}
+
+
+body{
+    background-image: url(../imagenes/alexandre-debieve-FO7JIlwjOtU-unsplash\ \(1\).jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.contenedor__general{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.caja__trasera{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(25px);
+    background-color: rgba(var(--color-5), 0.5);
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.caja__trasera div{
+    margin: 100px 40px;
+    color: var(--color-1);
+    transition: all 500ms;
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+}
+
+
+.caja__trasera div p, .caja__trasera button{
+    margin-top: 30px;
+}
+
+
+
+.caja__trasera div h3{
+    font-weight: 400;
+    font-size: 26px;
+
+}
+
+.caja__trasera button{
+    padding:  10px 40px;
+    border: 2px solid var(--color-1);
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--color-1);
+    outline: none;
+    transition: all 300ms;
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -ms-transition: all 300ms;
+    -o-transition: all 300ms;
+}
+
+.caja__trasera button:hover{
+    background: var(--color-1);
+    color: var(--color-3);
+
+}
+
+/* formularios */
+
+.contenedor__login-registro{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+    transition: left 1000ms ease-in-out;
+}
+
+.contenedor__login-registro form{
+    width: 100%;
+    padding: 80px 20px;
+    background: var(--color-2);
+    position: absolute;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.contenedor__login-registro form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-4);
+}
+
+.contenedor__login-registro form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: var(--color-1);
+    color: black;
+    font-size: 16px;
+    outline: none;
+
+}
+
+.contenedor__login-registro form button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    background: var(--color-5);
+    color: var(--color-3);
+    cursor: pointer;
+    outline: none;
+}
+
+.formulario__login{
+    opacity: 1;
+    display: block;
+
+}
+
+.formulario__registro{
+    display: none;
+}
+
+/* responsive desing */
+
+@media screen and (max-width: 850px){
+
+    main{
+        margin-top: 50px;
+    }
+
+    .caja__trasera{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .caja__trasera div{
+        margin: 0px;
+        position: absolute;
+    }
+
+    /* formularios */
+
+    .contenedor__login-registro{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedor__login-registro form {
+        position: relative;
+    }
+
+}
