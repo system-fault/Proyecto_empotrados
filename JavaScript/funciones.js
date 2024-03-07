@@ -31,5 +31,22 @@ generarTemperatura();
 setInterval(generarTemperatura, 5000);
 
 
+// TOGGLE ENTRE VIDEO E IMAGEN
 
+function toggleStream(){
 
+    var videoPlayer = document.getElementById('video-player');
+    var imagePlayer = document.getElementById('image-player');
+    var toggleButton = document.getElementById('toggle-media');
+
+    toggleButton.addEventListener('click', function() {
+        if (videoPlayer.style.display === 'none') {
+            videoPlayer.style.display = 'block';
+            imagePlayer.style.display = 'none';
+        } else {
+            videoPlayer.style.display = 'none';
+            imagePlayer.style.display = 'block';
+        }
+    });
+
+}
