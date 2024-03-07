@@ -5,18 +5,21 @@
 /* #956bd8, #19dd81); */
 
 body {
-    background: rgb(2, 0, 36);
-    background: linear-gradient(
-        265deg,
-        rgba(2, 0, 36, 1) 0%,
-        rgba(9, 9, 121, 1) 35%,
-        rgba(0, 212, 255, 1) 100%
-    );
+    background-image: url(../imagenes/alexandre-debieve-FO7JIlwjOtU-unsplash\ \(1\).jpg);
+    background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
 
 /*! clases (.) (class) */
+
+.titulo h1 {
+    font-family: "Arial Black", Arial, sans-serif; /* Selecciona una fuente llamativa */
+    font-size: 2.5em; /* Tamaño de la fuente */
+    color: #d9e710; /* Color del texto */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+}
 
 .grid-layout {
     display: grid;
@@ -62,8 +65,8 @@ body {
     /* border: 3px solid black; */
 }
 
-.caja {
-    background-color: aquamarine;
+.cajaControl {
+    background-color: rgb(228, 45, 188);
     /* border: 3px solid black; */
     text-align: center;
     line-height: 100px;
@@ -71,14 +74,37 @@ body {
 
 /** id (#) */
 
+#displayTemperatura {
+    position: relative;
+}
+
+#display {
+    position: relative; /* Establece la posición relativa para la imagen */
+    max-width: 80%; /* Ajusta el tamaño máximo de la imagen */
+    max-height: auto; /* Ajusta la altura máxima de la imagen */
+    z-index: 0; /* Asegura que la imagen esté detrás del texto */
+}
+
 #temperatura {
-    position: absolute; /* Establece la posición absoluta para el h3 */
-    top: 50%; /* Centra verticalmente */
-    left: 50%; /* Centra horizontalmente */
+    position: absolute; /* Establece la posición absoluta para el texto de la temperatura */
+    top: 50%; /* Coloca el texto en el centro vertical */
+    left: 50%; /* Coloca el texto en el centro horizontal */
     transform: translate(-50%, -50%); /* Centra exactamente el contenido */
     margin: 0; /* Elimina el margen predeterminado */
-    font-size: 3vw; /* Tamaño de fuente relativo al ancho de la ventana */
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     font-size: xx-large;
     color: chartreuse;
+    z-index: 1; /* Asegura que el texto esté sobre la imagen */
+}
+
+#media-container {
+    display: grid;
+    place-items: center;
+    padding: 5px;
+}
+
+#image-player {
+    display: none;
+    width: 300px;
+    height: 450px;
 }

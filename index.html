@@ -20,7 +20,7 @@
         <div class="cajaTemperatura">
             <h2>MEDICION TEMPERATURA</h2>
             <!--? DISPLAY TEMPERATURA -->
-            <div>
+            <div id="displayTemperatura">
                 <img id="display" src="./imagenes/display.jpg">
                 <h3 id="temperatura">
                     <script>
@@ -30,21 +30,18 @@
             </div>
         </div>
 
-
         <div class="cajaStream">
             <h2>STREAM VIDEO</h2>
-            <div>
-                <iframe width="80%" height="80%" src="https://www.youtube.com/embed/ouNrlys4mhc?si=4UXOEywHt7BVddYJ"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
+            <div id="media-container">
+                <video controls width="80%" height="70%" id="video-player">
+                    <source src="./video/file_example_MP4_640_3MG.mp4" type="video/mp4">
+                    Tu navegador no admite la etiqueta de video.
+                </video>
+                <img id="image-player" src="./imagenes/I need an image to be displayed when the video is .jpg" alt="Imagen">
             </div>
             <div>
-                <button>
+                <button id="toggle-media" onclick="toggleStream()">
                     <img src="./imagenes/botonVideo.png" alt="Boton icono de youtube" width="50" height="50" />
-                </button>
-                <button id="botonimagen">
-                    <img src="./imagenes/boton_imagen.png" alt="Boton icono de imagen" width="50" height="50" />
                 </button>
             </div>
         </div>
@@ -54,8 +51,7 @@
 
 
 
-
-        <div class="caja">
+        <div class="cajaControl">
             <h2>BOTONES CONTROL</h2>
             <button id="boton" onclick="cambiarImagen()">
                 <img id="miboton" src="./imagenes/boton1.jpg" />
