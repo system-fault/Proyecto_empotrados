@@ -1,3 +1,23 @@
+<?php
+
+    session_start();
+
+    if(!isset($_SESSION['usuario'])){
+        echo '
+            <script>
+                alert("Tienes que iniciar sesion primero.");
+                window.location = "index.php";
+            </script>
+        ';
+        session_destroy();
+        die();
+    }
+
+    
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,6 +33,7 @@
 <body onload="generarTemperatura();">
     <div class="titulo">
         <h1>CONTROL WEB</h1>
+        <a href="php/cerrar_session_be.php">Cerrar Sesion</a>
     </div>
 
     <section class="grid-layout">
@@ -46,11 +67,6 @@
             </div>
         </div>
 
-
-
-
-
-
         <div class="cajaControl">
             <h2>BOTONES CONTROL</h2>
             <button id="boton" onclick="cambiarImagen()">
@@ -61,3 +77,4 @@
 </body>
 
 </html>
+
