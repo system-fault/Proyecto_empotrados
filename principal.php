@@ -27,8 +27,8 @@
     <meta name="Autor" content="David Martinez" />
     <title>Control WEB</title>
     <link rel="stylesheet" href="./CSS/estilos.css" />
-    <script src="./JavaScript/funciones.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./JavaScript/funciones.js"></script>
 </head>
 
 <body onload="generarTemperatura();">
@@ -71,7 +71,7 @@
         <div class="cajaControl">
             <h2>BOTONES CONTROL</h2>
             <h3><a href="php/variable.php">VER ESTADO</a></h3>
-            <button id="boton" onclick="cambiarImagen()">
+            <button id="boton">
                 <img id="miboton" src="./imagenes/boton1.jpg" />
             </button>
         </div>
