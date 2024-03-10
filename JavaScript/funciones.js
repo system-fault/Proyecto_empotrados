@@ -7,13 +7,31 @@ function cambiarImagen() {
     let imagen = document.getElementById("miboton");
     //? Obtenemos la ruta de la imagen actual
     let rutaActual = imagen.src;
+    //?Variable on-off
+    let estado = 0;
     
     //? Verificamos la ruta actual y cambiamos a la imagen correspondiente
     if (rutaActual.includes("boton1.jpg")) {
         imagen.src = "./imagenes/boton2.jpg"; // Cambiar a la segunda imagen
+        estado = 0;
+        alert("El estado del led es: "+ estado);
     } else {
         imagen.src = "./imagenes/boton1.jpg"; // Cambiar a la primera imagen
+        estado = 1;
+        alert("El estado del led es: "+ estado);
     }
+
+    
+
+    //?Envio de estado a variable.php
+    $.POST("variable.php",{estado:estado},function(data){
+        if (data != null) {
+            alert("Los datos se han enviado correctamente");
+        }else{
+            alert("Los datos NO se han enviado correctamente");
+        }
+    });
+    
 }
 
 function generarTemperatura() {
@@ -50,3 +68,5 @@ function toggleStream(){
     });
 
 }
+
+
