@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>AQUÍ SE VE EL ESTADO DEL LED.</h1>
+    <h1>AQUÍ SE VE EL ESTADO DEL LED.</h1> -->
 
     <?php
     // tamano del segmento de memoria compartida
@@ -54,6 +54,6 @@
 
     ?>
     
-</body>
+<!-- </body>
 
-</html>
+</html> -->
