@@ -1,20 +1,24 @@
 <?php
 
+// Este fragmento PHP se encarga de verificar si el usuario ha iniciado sesión.
+// Si el usuario no ha iniciado sesión, se muestra un mensaje de alerta y se redirige a la página de inicio de sesión (index.php).
+// Además, se destruye la sesión y se detiene la ejecución del script.
+
 session_start();
 
 if (!isset($_SESSION['usuario'])) {
     echo '
             <script>
-                alert("Tienes que iniciar sesion primero.");
+                alert("Tienes que iniciar sesión primero.");
                 window.location = "index.php";
             </script>
         ';
-    session_destroy();
-    die();
+    session_destroy(); // Destruye la sesión actual
+    die(); // Detiene la ejecución del script
 }
 
-
 ?>
+
 
 
 
@@ -32,7 +36,7 @@ if (!isset($_SESSION['usuario'])) {
     <link rel="stylesheet" href="./CSS/estilos.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./JavaScript/funciones.js"></script>
-    
+
 
 </head>
 
@@ -60,12 +64,7 @@ if (!isset($_SESSION['usuario'])) {
         <div class="cajaStream">
             <h2>STREAM VIDEO</h2>
             <div id="media-container">
-                <!-- <embed src="http://192.168.1.38:63888/video" width="900" height="800"> -->
-                <video controls width="80%" height="70%" id="video-player">
-                    <source src="http://192.168.1.38:63888/video" type="video/mp4">
-                    Tu navegador no admite la etiqueta de video.
-                </video>
-
+            <img id="video-player" src="http://192.168.1.46:63888/video" width="640" height="480" onload="comprobarSenalVideo()" onerror="comprobarSenalVideo()">
                 <img id="image-player" src="./imagenes/I need an image to be displayed when the video is .jpg" alt="Imagen">
             </div>
             <div>
