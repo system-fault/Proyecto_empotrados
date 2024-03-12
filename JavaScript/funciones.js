@@ -3,6 +3,7 @@
  */
 let estado = 0;
 let temperatura;
+let temperatura_micro;
 
 //?Envio de estado a variable.php
 jQuery(document).ready(function () {
@@ -36,17 +37,18 @@ jQuery(document).ready(function () {
 
 function generarTemperatura() {
     //? Generar un número aleatorio entre -10 y 45
-    temperatura = Math.floor(Math.random() * (45 - -10 + 1)) + -10;
-
+    // temperatura = Math.floor(Math.random() * (45 - -10 + 1)) + -10;
+    temperatura = temperatura_micro;
+    
     //? Actualizar el texto de la temperatura en el HTML
     document.getElementById("temperatura").innerText = temperatura + " ºC";
 }
 
-//? Llamar a la función generarTemperatura inicialmente
-generarTemperatura();
+// //? Llamar a la función generarTemperatura inicialmente
+// generarTemperatura();
 
-//? Actualizar la temperatura cada 10 segundos
-setInterval(generarTemperatura, 5000);
+// //? Actualizar la temperatura cada 10 segundos
+// setInterval(generarTemperatura, 5000);
 
 // TOGGLE ENTRE VIDEO E IMAGEN
 
@@ -65,3 +67,64 @@ function toggleStream() {
         }
     });
 }
+
+
+
+    jQuery(document).ready(function () {
+    
+        // Función para solicitar la temperatura
+        function obtenerTemperatura() {
+            $.get(
+                "./php/temperatura.php",
+                function (response) {
+                    // Maneja la respuesta de la página PHP aquí
+                    console.log("Temperatura recibida:", response);
+                    // Actualiza la temperatura en tu interfaz si es necesario
+                    temperatura_micro = parseFloat(response);
+                }
+            );
+        }
+    
+        // Llama a la función obtenerTemperatura() cada 5 segundos (5000 milisegundos)
+        setInterval(obtenerTemperatura, 5000);
+    
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
