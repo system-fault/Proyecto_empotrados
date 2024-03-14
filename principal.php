@@ -40,37 +40,49 @@ if (!isset($_SESSION['usuario'])) {
 
 </head>
 
-<body onload="generarTemperatura();">
+<body onload="actualizarDatos();">
     <div class="titulo">
         <h1>CONTROL WEB</h1>
-        <a href="php/cerrar_session_be.php">Cerrar Sesion</a>
+        <button id="boton_salir" onclick="salir()" width="50px" height="50px">
+        <img src="./imagenes/cerrar_Session_web.png" alt="icono cierre sesion" width="50px" height="50px">
+        </button>
     </div>
 
     <section class="grid-layout">
 
         <div class="cajaTemperatura">
-            <h2>MEDICION TEMPERATURA</h2>
+            <h2>MEDICION AMBIENTAL</h2>
             <!--? DISPLAY TEMPERATURA -->
             <div id="displayTemperatura">
-                <img id="display" src="./imagenes/display.jpg">
-                <h3 id="temperatura">
-                    <script onload="setInterval();">
-                        setInterval(generarTemperatura, 5000);
-                    </script>
-                </h3>
+                <img id="display" src="./imagenes/display_web.png">
+                <div class="rotulos-display">
+                    <h3 class="display_info" id="temperatura">
+                        <script onload="setInterval();">
+                            setInterval(actualizarDatos, 5000);
+                        </script>
+                    </h3>
+                    <h3 class="display_info" id="presion">
+                        <script onload="setInterval();">
+                            setInterval(actualizarDatos, 5000);
+                        </script>
+                    </h3>
+                </div class="rotulos-display">
             </div>
         </div>
 
         <div class="cajaStream">
             <h2>STREAM VIDEO</h2>
             <div id="media-container">
-            <img id="video-player" src="http://192.168.1.46:63888/video" width="640" height="480" onload="comprobarSenalVideo()" onerror="comprobarSenalVideo()">
-                <img id="image-player" src="./imagenes/I need an image to be displayed when the video is .jpg" alt="Imagen">
+                <img id="image-player" src="./imagenes/carrusel/A desk where it's evident someone has been working.jpg" width="500" height="auto" alt="Imagen">
+                <iframe id="video-player" src="http://192.168.1.38:63888/video" frameborder="0" width="640" height="480"></iframe>
             </div>
+
             <div>
+                <!-- <button id="btn-izquierda" class="botonesFlechas"><img src="./imagenes/flechas_izq_web.png" alt="imagen flecha izquierda" width="100" height="100"></button> -->
                 <button id="toggle-media" onclick="toggleStream()">
-                    <img src="./imagenes/botonVideo.png" alt="Boton icono de youtube" width="50" height="50" />
+                    <img id="img_toggle" src="./imagenes/img_web.png" alt="Imagen Boton" width="100" height="100" />
                 </button>
+                <!-- <button id="btn-derecha" class="botonesFlechas"><img src="./imagenes/flechas_derc_web.png" alt="imagen flecha derecha" width="100" height="100"></button> -->
             </div>
         </div>
 
@@ -78,7 +90,7 @@ if (!isset($_SESSION['usuario'])) {
             <h2>BOTON CONTROL</h2>
             <!-- <h3><a href="php/variable.php">VER ESTADO</a></h3> -->
             <button id="boton">
-                <img id="miboton" src="./imagenes/boton1.jpg" width="100px" height="auto" />
+                <img id="miboton" src="./imagenes/boton_on_web.png" width="200px" height="auto" />
             </button>
         </div>
     </section>

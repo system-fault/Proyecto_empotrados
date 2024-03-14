@@ -1,12 +1,12 @@
 /* Hoja de estilos para index.html */
 
 :root {
-    --color-1: #D9B4C1; /* Definición del color primario */
+    --color-1: #d9b4c1; /* Definición del color primario */
     --color-2: #223440; /* Definición del color secundario */
     --color-3: #152026; /* Definición del color secundario */
-    --color-4: #BF6363; /* Definición del color secundario */
-    --color-5: #8C4D4D; /* Definición del color secundario */
-  }
+    --color-4: #bf6363; /* Definición del color secundario */
+    --color-5: #8c4d4d; /* Definición del color secundario */
+}
 
 /*? etiquetas HTML */
 
@@ -21,13 +21,23 @@ body {
 
 /*! clases (.) (class) */
 
+.titulo {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos dentro del contenedor */
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+}
+
 .titulo h1 {
     font-family: "Orbitron";
     text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 1);
     color: #daf6ff; /* almost cyan colored*/
     text-transform: uppercase; /* Convierte el texto a mayúsculas */
     letter-spacing: 2px; /* Espaciado entre letras */
+    margin-right: 30%; /* Empuja el título hacia la izquierda */
+    margin-left: 35%;
 }
+
+
 
 .grid-layout {
     display: grid;
@@ -37,7 +47,6 @@ body {
     height: 90%;
     margin: 0 auto;
     padding: 20px;
-    
 }
 
 .cajaTemperatura {
@@ -49,7 +58,7 @@ body {
     font-family: "Orbitron";
     text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 1);
     color: #daf6ff; /* almost cyan colored*/
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .cajaTemperatura img {
@@ -61,23 +70,27 @@ body {
     grid-column: 2/3;
     grid-row: 1/3;
     padding: 10px 10px;
-    
 }
 
-.cajaStream h2{
+.cajaStream h2 {
     font-family: "Orbitron";
     text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 1);
     color: #daf6ff; /* almost cyan colored*/
     font-size: 30px;
 }
 
+.botonesFlechas {
+    background: var(--color-4);
+}
+
 .cajaControl {
     text-align: center;
     padding: 10px 10px;
+    background: transparent;
     /* line-height: 100px; */
 }
 
-.cajaControl h2{
+.cajaControl h2 {
     font-family: "Orbitron";
     text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 1);
     color: #daf6ff; /* almost cyan colored*/
@@ -92,6 +105,8 @@ body {
 
 #display {
     position: relative; /* Establece la posición relativa para la imagen */
+    width: 250px;
+    height: auto;
     max-width: 80%; /* Ajusta el tamaño máximo de la imagen */
     max-height: auto; /* Ajusta la altura máxima de la imagen */
     z-index: 0; /* Asegura que la imagen esté detrás del texto */
@@ -99,7 +114,7 @@ body {
 
 #temperatura {
     position: absolute; /* Establece la posición absoluta para el texto de la temperatura */
-    top: 50%; /* Coloca el texto en el centro vertical */
+    top: 30%; /* Coloca el texto en el centro vertical */
     left: 50%; /* Coloca el texto en el centro horizontal */
     transform: translate(-50%, -50%); /* Centra exactamente el contenido */
     margin: 0; /* Elimina el margen predeterminado */
@@ -107,7 +122,20 @@ body {
     text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 1);
     color: #daf6ff; /* almost cyan colored*/
     font-size: 30px;
-    max-width: 100%; /* Para evitar que el texto se desborde */
+    max-width: 70%; /* Para evitar que el texto se desborde */
+    z-index: 1; /* Asegura que el texto esté sobre la imagen */
+}
+#presion {
+    position: absolute; /* Establece la posición absoluta para el texto de la temperatura */
+    top: 60%; /* Coloca el texto en el centro vertical */
+    left: 50%; /* Coloca el texto en el centro horizontal */
+    transform: translate(-50%, -50%); /* Centra exactamente el contenido */
+    margin: 0; /* Elimina el margen predeterminado */
+    font-family: "Orbitron";
+    text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 1);
+    color: #daf6ff; /* almost cyan colored*/
+    font-size: 30px;
+    max-width: 70%; /* Para evitar que el texto se desborde */
     z-index: 1; /* Asegura que el texto esté sobre la imagen */
 }
 
@@ -119,8 +147,20 @@ body {
 
 #image-player {
     display: none;
-    width: 300px;
-    height: 450px;
+    width: 700px;
+    height: auto;
+}
+
+#boton {
+    background: transparent;
+    box-shadow: none; /* Elimina la sombra */
+    border: none; /* Elimina el borde */
+    /* Además, si deseas eliminar otros estilos predeterminados del botón, puedes agregar lo siguiente */
+    background: none; /* Elimina el fondo */
+    padding: 0; /* Elimina el relleno */
+    margin: 0; /* Elimina el margen */
+    cursor: pointer; 
+    
 }
 
 /* Media query para pantallas medianas */
@@ -135,4 +175,18 @@ body {
     #temperatura {
         font-size: 40px;
     }
+}
+
+#toggle-media {
+    background: var(--color-1);
+    cursor: pointer; 
+}
+
+#boton_salir {
+    background:var(--color-1);
+    width: 80px;
+    height: auto;
+    float: right;
+    cursor: pointer; 
+    
 }
