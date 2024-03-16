@@ -26,6 +26,8 @@ let presion;
 let temperatura_micro;
 let presion_micro;
 
+
+
 //? Envío de estado a `variable.php` cuando se hace clic en un botón en la página web.
 jQuery(document).ready(function () {
     // Selecciona el botón con el id "boton" y define un evento de clic
@@ -130,6 +132,7 @@ function toggleStream() {
             imagen.src = "./imagenes/img_web.png"; // Cambia a la primera imagen
         
         }
+
 
         // //! sin implementar
         // if(rutaActual.includes("img_web.png")){
