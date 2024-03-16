@@ -163,20 +163,6 @@ body {
     
 }
 
-/* Media query para pantallas medianas */
-@media (min-width: 768px) and (max-width: 1024px) {
-    #temperatura {
-        font-size: 18px;
-    }
-}
-
-/* Media query para pantallas grandes */
-@media (min-width: 1024px) {
-    #temperatura {
-        font-size: 40px;
-    }
-}
-
 #toggle-media {
     background: var(--color-1);
     cursor: pointer; 
@@ -189,4 +175,26 @@ body {
     float: right;
     cursor: pointer; 
     
+}
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 576px) {
+    #temperatura #presion {
+        font-size: 8px;
+    }
+}
+
+/* Media query para pantallas medianas */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #temperatura #presion {
+        font-size: 18px;
+    }
+}
+
+/* Media query para pantallas grandes */
+@media (min-width: 1025px) {
+    #temperatura #presion {
+        font-size: 20px;
+    }
 }
